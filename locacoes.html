@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Locações Registradas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Locações Registradas</h1>
+    <nav><a href="index.html">Voltar</a></nav>
+  </header>
+
+  <main id="locacoes-list" class="locacoes-container"></main>
+
+  <script>
+
+const carros = [{ id: 1, modelo: "Onix LT 1.0" },
+      { id: 2, modelo: "HB20 Vision" },
+      { id: 3, modelo: "Renegade Longitude" },
+      { id: 4, modelo: "Corolla XEi" },
+      { id: 5, modelo: "Civic Touring" },
+      { id: 6, modelo: "Fiat Mobi Like" },
+      { id: 7, modelo: "Kwid Zen" },
+      { id: 8, modelo: "Gol Trendline" },
+      { id: 9, modelo: "Compass Limited" },
+      { id: 10, modelo: "Tracker Premier" },];
+
+    const locacoesList = document.getElementById("locacoes-list");
+    const locacoes = JSON.parse(localStorage.getItem("locacoes") || "[]");
+
+    if (locacoes.length === 0) {
+      locacoesList.innerHTML = "<p>Nenhuma locação registrada.</p>";
+    } else {
+      locacoes.forEach(loc => {
+        const carro = carros.find(c => c.id === loc.carroId);
+        const div = document.createElement("div");
+        div.className = "car-card";
+        div.innerHTML = `
+          <h3>${loc.nome}</h3>
+          <p><strong>CPF:</strong> ${loc.cpf}</p>
+          <p><strong>Período:</strong> ${loc.inicio} a ${loc.fim}</p>
+          <p><strong>Carro:</strong> ${carro?.modelo || 'ID ' + loc.carroId}</p>
+        `;
+        locacoesList.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>

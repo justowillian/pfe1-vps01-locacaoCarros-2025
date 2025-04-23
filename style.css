@@ -1,0 +1,141 @@
+:root {
+    --cor1: #003366;
+    --cor2: #006699;
+    --cor3: #0099CC;
+    --cor4: #00CCFF;
+    --cor5: #99DDFF;
+    --transp1: rgba(0, 0, 0, 0.8);
+    --transp2: rgba(255, 255, 255, 0.8);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  body {
+    background-color: var(--cor5);
+    color: var(--cor1);
+  }
+  
+  header {
+    background-color: var(--cor1);
+    color: white;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .car-card {
+    background-color: var(--cor4);
+    border: 1px solid var(--cor2);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  .car-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: var(--cor1);
+    color: white;
+    padding: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--cor2);
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--transp1);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: var(--transp2);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  #rental-form-section {
+    padding: 20px;
+    background-color: var(--cor3);
+    display: flex;
+    justify-content: center;
+  }
+  
+  #rental-form {
+    background-color: var(--cor4);
+    border: 2px solid var(--cor2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .car-card {
+      width: 90%;
+    }
+  }
+  
+  .locacoes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  nav {
+    margin-top: 10px;
+  }
+  
+  nav a {
+    background-color: var(--cor4);
+    padding: 10px 15px;
+    color: var(--cor1);
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background-color: var(--cor3);
+    color: white;
+  }
+  
